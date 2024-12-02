@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Empower Ability Labs</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta
       name="viewport"
@@ -60,7 +61,7 @@
     </nav>
     <main>
       <!-- Main landing view -->
-      <section id="home" role="region" aria-labelledby="home-heading">
+      <section id="home" aria-labelledby="home-heading">
         <div class="jumbotron">
           <div class="container">
             <!-- rmeove class="h2" or make it <h2> -->
@@ -75,9 +76,52 @@
               with disabilities use technology and navigate the digital world?
               What tools do they employ?
             </p>
-            <button type="button" onclick="openDialog('dialog1', this)">
+            <button
+              type="button"
+              id="modalOpenBtn"
+              onclick="main.openDialog('dialog1', this)"
+            >
               Meet the Empower Community
             </button>
+            <div id="dialog_layer" class="dialogs">
+              <div id="overlay" class="overlay hidden"></div>
+              <!-- Dialog: Community Steering Committee -->
+              <div
+                role="dialog"
+                id="dialog1"
+                aria-labelledby="dialog1_label"
+                aria-modal="true"
+                class="hidden"
+              >
+                <h2 id="dialog1_label" class="dialog_label" tabindex="-1">
+                  Empower Community
+                </h2>
+                <div class="dialog_content">
+                  <p>
+                    We get an aha! moments from product managers who try our
+                    services for the first time. We offered many lab days,
+                    workshops and offered usability testing services to many
+                    companies and organizations including:
+                  </p>
+                  <ul>
+                    <li>McGill University</li>
+                    <li>Walmart.ca</li>
+                    <li>Apple.ca</li>
+                    <li>Google.ca</li>
+                    <li>Government of Canada</li>
+                  </ul>
+                </div>
+                <div class="dialog_form_actions">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="main.closeDialog(this)"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -85,22 +129,55 @@
           <!-- Example row of columns -->
           <div class="row">
             <div class="col-md-4">
+              <h2>Our Approach</h2>
               <p>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-                tellus ac cursus commodo.
+                Empower Ability Labs utilizes a hands-on approach to raise
+                awareness and promote empathy. Our immersive workshops and lab
+                days provide participants with a unique opportunity to step into
+                the shoes of individuals with disabilities and navigate the
+                world from their perspective.
               </p>
+              <a
+                target="_blank"
+                href="https://www.google.com/search/howsearchworks/our-approach/"
+                class="btn btn-link"
+                >Learn more
+                <span class="sr-only">(Opens in a new window)</span></a
+              >
             </div>
             <div class="col-md-4">
+              <h2>Services</h2>
               <p>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-                tellus ac cursus commodo.
+                Promote accessibility awareness and enhance the user experience.
+                Our services include:
               </p>
+              <ul>
+                <li>Empathy lab days and workshops</li>
+                <li>Go beyond WCAG compliance!</li>
+                <li>Inspirational speakers</li>
+              </ul>
+
+              <a
+                href="https://www.elevenways.be/en/services"
+                class="btn btn-link"
+                >Learn more
+                <span class="sr-only">(Opens in a new window)</span></a
+              >
             </div>
             <div class="col-md-4">
+              <h2>Our Testimonials</h2>
               <p>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-                tellus ac cursus commodo.
+                Invite a speaker with disabilities to share their unique
+                journey. This captivating addition to your upcoming event will
+                offer insights that resonate, inspire, educate, and enrich your
+                team’s understanding of inclusion.
               </p>
+              <a
+                href="https://dictionary.cambridge.org/us/dictionary/english/testimonial"
+                class="btn btn-link"
+                >Learn more
+                <span class="sr-only">(Opens in a new window)</span></a
+              >
             </div>
           </div>
           <hr />
@@ -108,12 +185,7 @@
         <!-- /container -->
       </section>
 
-      <section
-        id="services"
-        role="region"
-        aria-labelledby="services-heading"
-        hidden
-      >
+      <section id="services" aria-labelledby="services-heading" hidden>
         <div class="jumbotron">
           <div class="container">
             <h1 id="schedule-heading">EmpowerAbilityLab Services</h1>
@@ -121,12 +193,7 @@
         </div>
       </section>
 
-      <section
-        id="schedule-a-call"
-        role="region"
-        aria-labelledby="schedule-heading"
-        hidden
-      >
+      <section id="schedule-a-call" aria-labelledby="schedule-heading" hidden>
         <div class="jumbotron">
           <div class="container">
             <h1 id="schedule-heading">
