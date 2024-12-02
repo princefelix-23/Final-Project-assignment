@@ -27,63 +27,114 @@
   </head>
 
   <body>
-    <div class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="https://www.google.ca/">
-        <img src="/images/empowerabilitylabslogo.png" alt="" property="logo" />
-      </a>
-      <!-- Main Navigation for Empower Ability Labs-->
-      <nav>
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault"></div>
-      </nav>
-    </div>
+    <nav
+      class="navbar navbar-expand-md bg-body-tertiary navbar-dark fixed-top bg-dark"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.google.ca/">
+          <img
+            src="/images/empowerabilitylabslogo.png"
+            alt=""
+            property="logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            <a class="nav-link" href="#services">Services</a>
+            <a class="nav-link" href="#schedule-a-call">Schedule a call</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <main>
       <!-- Main landing view -->
-      <div class="jumbotron">
+      <section id="home" role="region" aria-labelledby="home-heading">
+        <div class="jumbotron">
+          <div class="container">
+            <!-- rmeove class="h2" or make it <h2> -->
+            <!-- <h1 class="h2">Welcome to Empower Ability Labs!</h1> -->
+            <h1>Welcome to Empower Ability Labs!</h1>
+            <p>
+              Empower Ability Labs is a hub for learning and empathy-building.
+              We are on a mission to foster understanding and promote inclusive
+              digital experiences for all. We offer a range of services designed
+              to promote accessibility awareness, drive inclusivity, and enhance
+              the user experience. And help you find answers on How do people
+              with disabilities use technology and navigate the digital world?
+              What tools do they employ?
+            </p>
+            <button type="button" onclick="openDialog('dialog1', this)">
+              Meet the Empower Community
+            </button>
+          </div>
+        </div>
+
         <div class="container">
-          <!-- rmeove class="h2" or make it <h2> -->
-          <!-- <h1 class="h2">Welcome to Empower Ability Labs!</h1> -->
-          <h1>Welcome to Empower Ability Labs!</h1>
-          <p>
-            Empower Ability Labs is a hub for learning and empathy-building. We
-            are on a mission to foster understanding and promote inclusive
-            digital experiences for all. We offer a range of services designed
-            to promote accessibility awareness, drive inclusivity, and enhance
-            the user experience. And help you find answers on How do people with
-            disabilities use technology and navigate the digital world? What
-            tools do they employ?
-          </p>
-          <button type="button" onclick="openDialog('dialog1', this)">
-            Meet the Empower Community
-          </button>
+          <!-- Example row of columns -->
+          <div class="row">
+            <div class="col-md-4">
+              <p>
+                Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+                tellus ac cursus commodo.
+              </p>
+            </div>
+            <div class="col-md-4">
+              <p>
+                Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+                tellus ac cursus commodo.
+              </p>
+            </div>
+            <div class="col-md-4">
+              <p>
+                Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+                tellus ac cursus commodo.
+              </p>
+            </div>
+          </div>
+          <hr />
         </div>
-      </div>
+        <!-- /container -->
+      </section>
 
-      <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="col-md-4">
-            <p>
-              Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-              tellus ac cursus commodo.
-            </p>
-          </div>
-          <div class="col-md-4">
-            <p>
-              Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-              tellus ac cursus commodo.
-            </p>
-          </div>
-          <div class="col-md-4">
-            <p>
-              Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-              tellus ac cursus commodo.
-            </p>
+      <section
+        id="services"
+        role="region"
+        aria-labelledby="services-heading"
+        hidden
+      >
+        <div class="jumbotron">
+          <div class="container">
+            <h1 id="schedule-heading">EmpowerAbilityLab Services</h1>
           </div>
         </div>
+      </section>
 
-        <hr />
-      </div>
-      <!-- /container -->
+      <section
+        id="schedule-a-call"
+        role="region"
+        aria-labelledby="schedule-heading"
+        hidden
+      >
+        <div class="jumbotron">
+          <div class="container">
+            <h1 id="schedule-heading">
+              Schedule a Call With EmpowerAbilityLab
+            </h1>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="container">
