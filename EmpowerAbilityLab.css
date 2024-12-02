@@ -5,3 +5,41 @@
 .hidden {
   display: none;
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  display: none;
+}
+
+/* Show the overlay */
+.overlay.visible {
+  display: block;
+}
+
+#dialog1 {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  z-index: 5;
+  width: 30%;
+  padding: 20px;
+  box-sizing: border-box;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -20%);
+}
+
+#dialog1 h2 {
+  text-align: center;
+}
+
+#dialog1 .dialog_form_actions {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}

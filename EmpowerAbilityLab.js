@@ -38,6 +38,25 @@ const main = {
             });
         });
     },
+    openDialog: (dialogId) => {
+        const dialog = document.getElementById(dialogId);
+        const overlay = document.getElementById("overlay");
+
+        dialog.classList.remove("hidden");
+        overlay.classList.add("visible");
+
+        dialog.querySelector(".dialog_label").focus();
+    },
+    closeDialog: (button) => {
+        const dialog = button.closest('[role="dialog"]');
+        const overlay = document.getElementById("overlay");
+
+        dialog.classList.add("hidden");
+        overlay.classList.remove("visible");
+
+        document.getElementById("modalOpenBtn").focus();
+
+    }
 };
 
 document.addEventListener("DOMContentLoaded", main.init);
