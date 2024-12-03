@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Empower Ability Labs</title>
+    <title>Empower ABbility Labs</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta
       name="viewport"
@@ -197,8 +197,67 @@
         <div class="jumbotron">
           <div class="container">
             <h1 id="schedule-heading">
-              Schedule a Call With EmpowerAbilityLab
+              Schedule a Call With EmpowerAbilityLab             
             </h1>
+            <p>At Empower Ability Labs, we are dedicated to cultivating empathy and driving positive change through immersive experiences.</p>
+            <p>Fill out the form below and we'll get back to you as soon as we can to schedule a call with our sales team!</p>
+            <form id="contact-form" action="#" method="post" aria-live="polite">
+            
+                   
+                  <div class="control">
+                      <label for="business-name">Business Name:</label>
+                      <input type="text" id="business-name" name="business-name">
+                  </div>
+  
+                  <div class="control">
+                      <label for="phone">Phone number (613-123-1234):</label>
+                      <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" aria-describedby="phone-format">
+                      <span id="phone-format" class="visually-hidden">Format: 613-123-1234</span>
+                  </div>
+  
+                  <div class="control">
+                      <label for="email">Email (required):</label>
+                      <input type="email" id="email" name="email" required>
+                  </div>
+           
+  
+              <fieldset>
+                  <legend>What would you like to talk about</legend>  
+                  <div>
+                      <input type="checkbox" id="awareness-lab" name="topic" value="awareness-lab">
+                      <label for="awareness-lab">Awareness lab days and workshops</label>
+                  </div>
+  
+                  <div>
+                      <input type="checkbox" id="invite-speaker" name="topic" value="invite-speaker">
+                      <label for="invite-speaker">Invite a speaker with disabilities to your event</label>
+                  </div>
+  
+                  <div>
+                      <input type="checkbox" id="usability-testing" name="topic" value="usability-testing">
+                      <label for="usability-testing">Usability testing</label>
+                  </div>
+              </fieldset>
+  
+              <div id="event-details" style="display:none;">
+                  <label for="event-description">Tell us about your event</label>
+                  <textarea id="event-description" name="event-description" rows="4" cols="50"></textarea>
+              </div>
+  
+              <div>
+                  <label for="receive-emails" class="switch">
+                      <input type="checkbox" id="receive-emails" name="receive-emails">
+                      <span class="slider"></span>
+                  </label>
+                  <span>Receive emails about updates and services</span>
+                  <!-- Tooltip for switch -->
+                  <span class="visually-hidden">This is a switch interactive element. Choose an image switch and use it.</span>
+              </div>
+  
+              <button type="submit">Schedule a call</button>
+  
+          </form>
+
           </div>
         </div>
       </section>
