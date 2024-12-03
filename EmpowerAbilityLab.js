@@ -60,3 +60,21 @@ const main = {
 };
 
 document.addEventListener("DOMContentLoaded", main.init);
+
+// Switch code
+const toggle = document.getElementById('email-updates-switch');
+
+toggle.addEventListener('click', function() {
+    const isChecked = this.getAttribute('aria-checked') === 'true';
+    this.setAttribute('aria-checked', !isChecked);
+
+    console.log('Email updates preference:', !isChecked);
+});
+
+// Add keyboard support
+toggle.addEventListener('keydown', function(e) {
+    if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        this.click();
+    }
+});
