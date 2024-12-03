@@ -78,3 +78,29 @@ toggle.addEventListener('keydown', function(e) {
         this.click();
     }
 });
+
+// Form checking code
+function validateForm()
+{
+    return true;
+}
+
+// Submit "schedule a call" form
+document.querySelector('#submit-schedule-call').addEventListener('click', (e) =>
+    {
+        e.preventDefault();
+        const isValid = validateForm();
+        const formFeedback = document.querySelector('#form-feedback');
+
+        // Clear previous content
+        formFeedback.textContent = '';
+
+        if (isValid) {
+            // Submit the form
+            formFeedback.textContent = 'Form submitted successfully!';
+        } else {
+            // Show an error message
+            formFeedback.textContent = 'Please fill out all required fields.';
+        }
+    }
+);
