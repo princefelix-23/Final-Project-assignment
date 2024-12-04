@@ -110,7 +110,6 @@ const main = {
             main.validateInput("business-name", "Please enter your business name!");
             main.validateInput("phone", "Please tell us your phone number!");
             main.validateInput("email", "Please tell us your email!");
-            main.validateInput("topic", "Please choose a topic!");
 
             // If no errors were found, submit the form
             if ($("fieldset.errors").length === 0) {
@@ -136,7 +135,7 @@ const main = {
         if (!isValid) {
             // Create an error message if input is invalid
             if ($("fieldset.errors").length === 0) {
-                $("form").prepend('<fieldset aria-label="errors" class="errors"><legend>Errors</legend><ul></ul></fieldset>');
+                $("form").prepend('<fieldset aria-label="errors" class="errors"><legend>Empty Fields</legend><ul></ul></fieldset>');
             }
 
             const $errorContainer = $("fieldset.errors ul");
@@ -194,28 +193,28 @@ function validateForm() {
     return form.checkValidity();
 }
 
-// // Submit "schedule a call" form
-// document.querySelector('#submit-schedule-call').addEventListener('click', (e) => {
-//     const form = e.target.closest('form');
-//     const formFeedback = document.querySelector('#form-feedback');
+// Submit "schedule a call" form
+document.querySelector('#submit-schedule-call').addEventListener('click', (e) => {
+    const form = e.target.closest('form');
+    const formFeedback = document.querySelector('#form-feedback');
 
-//     // Let the browser handle validation if the form is invalid
-//     if (!form.checkValidity()) {
-//         formFeedback.textContent = 'Please review the form and correct any errors before submitting.';
-//         formFeedback.classList.add('error-message');
-//         return;
-//     }
+    // Let the browser handle validation if the form is invalid
+    if (!form.checkValidity()) {
+        formFeedback.textContent = 'Please review the form and correct any errors before submitting.';
+        formFeedback.classList.add('error-message');
+        return;
+    }
 
-//     // Only prevent default and handle submission if form is valid
-//     e.preventDefault();
+    // Only prevent default and handle submission if form is valid
+    e.preventDefault();
 
-//     // Clear previous content
-//     formFeedback.textContent = '';
-//     formFeedback.classList.remove('error-message');
+    // Clear previous content
+    formFeedback.textContent = '';
+    formFeedback.classList.remove('error-message');
 
-//     // Handle valid submission
-//     formFeedback.textContent = 'Form submitted successfully!';
-// });
+    // Handle valid submission
+    formFeedback.textContent = 'Form submitted successfully!';
+});
 
 const speakerToggle = document.querySelector('#invite-speaker');
 const speakerSection = document.querySelector('#event-description-section');
