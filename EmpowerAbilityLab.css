@@ -46,10 +46,28 @@
 
 /* Email preferences switch code */
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+label[for="event-description"] {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#submit-schedule-call {
+  border: 1px solid #000000;
+  width: 150px;
+}
+
 .switch-container {
   display: flex;
   align-items: center;
   gap: 12px;
+  height: auto;
 }
 
 .switch {
