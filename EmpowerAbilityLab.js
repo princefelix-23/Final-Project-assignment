@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", main.init);
 // Reference: https://www.w3.org/WAI/ARIA/apg/patterns/switch/examples/switch-button/
 const toggle = document.getElementById('email-updates-switch');
 
-toggle.addEventListener('click', function() {
+toggle.addEventListener('click', function () {
     const isChecked = this.getAttribute('aria-checked') === 'true';
     this.setAttribute('aria-checked', !isChecked);
 
@@ -73,7 +73,7 @@ toggle.addEventListener('click', function() {
 });
 
 // Add keyboard support
-toggle.addEventListener('keydown', function(e) {
+toggle.addEventListener('keydown', function (e) {
     if (e.key === ' ' || e.key === 'Enter') {
         e.preventDefault();
         this.click();
@@ -81,27 +81,25 @@ toggle.addEventListener('keydown', function(e) {
 });
 
 // Form checking code
-function validateForm()
-{
+function validateForm() {
     return true;
 }
 
 // Submit "schedule a call" form
-document.querySelector('#submit-schedule-call').addEventListener('click', (e) =>
-    {
-        e.preventDefault();
-        const isValid = validateForm();
-        const formFeedback = document.querySelector('#form-feedback');
+document.querySelector('#submit-schedule-call').addEventListener('click', (e) => {
+    e.preventDefault();
+    const isValid = validateForm();
+    const formFeedback = document.querySelector('#form-feedback');
 
-        // Clear previous content
-        formFeedback.textContent = '';
+    // Clear previous content
+    formFeedback.textContent = '';
 
-        if (isValid) {
-            // Submit the form
-            formFeedback.textContent = 'Form submitted successfully!';
-        } else {
-            // Show an error message
-            formFeedback.textContent = 'Please fill out all required fields.';
-        }
+    if (isValid) {
+        // Submit the form
+        formFeedback.textContent = 'Form submitted successfully!';
+    } else {
+        // Show an error message
+        formFeedback.textContent = 'Please fill out all required fields.';
     }
+}
 );

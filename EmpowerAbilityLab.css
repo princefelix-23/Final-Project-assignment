@@ -76,3 +76,8 @@
 .switch[aria-checked="false"] .switch-on {
   display: none;
 }
+
+#schedule-a-call-icon {
+  position: relative;
+  width: 100px;
+}
