@@ -127,3 +127,17 @@ speakerToggle.addEventListener('change', (e) => {
         speakerToggle.setAttribute('aria-expanded', 'false');
     }
 });
+
+// Enter key support for checkboxes
+document.querySelectorAll('fieldset input[type=checkbox]').forEach((checkbox) =>
+{
+    checkbox.addEventListener('keydown', (e) =>
+    {
+        // Add Enter key support
+        if (e.key === ' ' || e.key === 'Enter')
+        {
+            e.preventDefault();
+            checkbox.click();
+        }
+    });
+});
