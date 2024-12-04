@@ -211,7 +211,7 @@
                   </p>
                 </div>
                 <div class="col-4">
-                  <img 
+                  <img
                     id="schedule-a-call-icon"
                     src="/images/scheduleacall.png"
                     alt=""
@@ -221,6 +221,73 @@
             </div>
 
             <form>
+              <div class="control">
+                <label for="business-name">Business Name:</label>
+                <input type="text" id="business-name" name="business-name" />
+              </div>
+
+              <div class="control">
+                <label for="phone">Phone number (613-123-1234):</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  aria-describedby="phone-format"
+                />
+                <span id="phone-format" class="sr-only"
+                  >Format: 613-123-1234</span
+                >
+              </div>
+
+              <div class="control">
+                <label for="email">Email (required):</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  aria-required="true"
+                  required
+                />
+              </div>
+
+              <fieldset>
+                <legend>What would you like to talk about</legend>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="awareness-lab"
+                    name="topic"
+                    value="awareness-lab"
+                  />
+                  <label for="awareness-lab"
+                    >Awareness lab days and workshops</label
+                  >
+                </div>
+
+                <div>
+                  <input
+                    type="checkbox"
+                    id="invite-speaker"
+                    name="topic"
+                    value="invite-speaker"
+                  />
+                  <label for="invite-speaker"
+                    >Invite a speaker with disabilities to your event</label
+                  >
+                </div>
+
+                <div>
+                  <input
+                    type="checkbox"
+                    id="usability-testing"
+                    name="topic"
+                    value="usability-testing"
+                  />
+                  <label for="usability-testing">Usability testing</label>
+                </div>
+              </fieldset>
+
               <p id="form-feedback" aria-live="assertive"></p>
               <label for="event-description"
                 >Please tell us about your event</label
