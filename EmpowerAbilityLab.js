@@ -58,25 +58,47 @@ const main = {
         document.getElementById("modalOpenBtn").focus();
 
     },
-    handleHamburger: () => {
-        const navLinks = document.querySelectorAll('.menubar-navigation a'); // Select all the links in the menu
-        let currentIndex = 0; // Start with the first link
+    handleMenu: () => {
+        const menuItems = document.querySelectorAll('.menubar-navigation a');
+        let currentIndex = 0;
 
-        // Move focus to the current link
-        navLinks[currentIndex].focus();
-
-        // Listen for keydown events to navigate
-        document.addEventListener('keydown', function (event) {
-            if (event.key === "ArrowDown" || event.key === "ArrowRight") {
-                // Move focus to the next link (right or down)
-                currentIndex = (currentIndex + 1) % navLinks.length; // Loop back to the start
-            } else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
-                // Move focus to the previous link (up or left)
-                currentIndex = (currentIndex - 1 + navLinks.length) % navLinks.length; // Loop to the last item
+        // Function to focus the next or previous menu item
+        function focusMenuItem(index) {
+            if (index >= 0 && index < menuItems.length) {
+                menuItems[index].focus();
+                currentIndex = index;
             }
+        }
 
-            // Set focus to the updated link
-            navLinks[currentIndex].focus();
+        // Function to handle keydown events for navigation
+        document.querySelector('.menubar-navigation').addEventListener('keydown', function (event) {
+            switch (event.key) {
+                case 'ArrowRight':
+                    // Move focus to the next item
+                    focusMenuItem((currentIndex + 1) % menuItems.length);
+                    break;
+                case 'ArrowLeft':
+                    // Move focus to the previous item
+                    focusMenuItem((currentIndex - 1 + menuItems.length) % menuItems.length);
+                    break;
+                default:
+                    if (this.isPrintableCharacter(key)) {
+                        this.setFocusByFirstCharacter(menuId, tgt, key);
+                        flag = true;
+                    }
+                    break;
+            }
+        });
+
+        // Focus on the first menu item initially
+        focusMenuItem(currentIndex);
+
+        // Optionally handle mouse click to mark the item as active
+        menuItems.forEach(item => {
+            item.addEventListener('click', function () {
+                menuItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
         });
     }
 };
