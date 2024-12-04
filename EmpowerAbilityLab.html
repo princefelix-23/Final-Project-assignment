@@ -27,39 +27,41 @@
     <link rel="stylesheet" href="EmpowerAbilityLab.css" />
   </head>
   <body>
-    <header>
+    <header role="banner">
       <nav
+        aria-label="Empower Ability Labs"
         class="navbar navbar-expand-md bg-body-tertiary navbar-dark fixed-top bg-dark"
       >
-        <div class="container-fluid">
-          <a class="navbar-brand" href="https://www.google.ca/">
-            <img
-              src="/images/empowerabilitylabslogo.png"
-              alt=""
-              property="logo"
-            />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#home"
-                >Home</a
-              >
-              <a class="nav-link" href="#services">Services</a>
-              <a class="nav-link" href="#schedule-a-call">Schedule a call</a>
-            </div>
-          </div>
-        </div>
+        <a class="navbar-brand" href="https://www.google.ca/">
+          <img
+            src="/images/empowerabilitylabslogo.png"
+            alt=""
+            property="logo"
+          />
+        </a>
+        <ul
+          class="menubar-navigation"
+          aria-label="Empower Ability Labs"
+          role="menubar"
+        >
+          <li role="none">
+            <a
+              class="nav-link active"
+              role="menuitem"
+              aria-current="page"
+              href="#home"
+              >Home</a
+            >
+          </li>
+          <li role="none">
+            <a class="nav-link" role="menuitem" href="#services">Services</a>
+          </li>
+          <li role="none">
+            <a class="nav-link" role="menuitem" href="#schedule-a-call"
+              >Schedule a call</a
+            >
+          </li>
+        </ul>
       </nav>
     </header>
     <main>
@@ -179,7 +181,6 @@
                 team’s understanding of inclusion.
               </p>
               <a
-              
                 target="_blank"
                 href="https://dictionary.cambridge.org/us/dictionary/english/testimonial"
                 class="btn btn-link"
@@ -434,7 +435,13 @@
                 >
               </div>
 
-              <button id="submit-schedule-call" class="btn btn-light" type="submit">Schedule a call</button>
+              <button
+                id="submit-schedule-call"
+                class="btn btn-light"
+                type="submit"
+              >
+                Schedule a call
+              </button>
             </form>
           </div>
         </div>

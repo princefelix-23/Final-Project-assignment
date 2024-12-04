@@ -1,6 +1,7 @@
 const main = {
     init: () => {
         main.navigation();
+        main.handleHamburger();
     },
     navigation: () => {
         const navLinks = document.querySelectorAll(".nav-link");
@@ -55,6 +56,9 @@ const main = {
         overlay.classList.remove("visible");
 
         document.getElementById("modalOpenBtn").focus();
+
+    },
+    handleHamburger: () => {
 
     }
 };
@@ -129,13 +133,10 @@ speakerToggle.addEventListener('change', (e) => {
 });
 
 // Enter key support for checkboxes
-document.querySelectorAll('fieldset input[type=checkbox]').forEach((checkbox) =>
-{
-    checkbox.addEventListener('keydown', (e) =>
-    {
+document.querySelectorAll('fieldset input[type=checkbox]').forEach((checkbox) => {
+    checkbox.addEventListener('keydown', (e) => {
         // Add Enter key support
-        if (e.key === ' ' || e.key === 'Enter')
-        {
+        if (e.key === ' ' || e.key === 'Enter') {
             e.preventDefault();
             checkbox.click();
         }

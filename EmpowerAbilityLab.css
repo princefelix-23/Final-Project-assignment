@@ -86,10 +86,10 @@ label[for="event-description"] {
   border: 1px solid #000000;
   width: 150px;
 }
-
+#submit-schedule-call:hover,
 #submit-schedule-call:focus {
-    outline: 2px solid #007bff;
-    outline-offset: 2px;
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
 }
 
 .switch-container {
@@ -144,4 +144,48 @@ legend {
   color: red;
   font-weight: bold;
   font-size: 16px;
+}
+
+.menubar-navigation {
+  margin: 0;
+  padding: 2px;
+  font-size: 110%;
+  list-style: none;
+}
+
+.menubar-navigation li {
+  margin: 0;
+  padding: 0;
+  border: 0 solid black;
+  list-style: none;
+}
+
+.menubar-navigation > li {
+  display: inline-block;
+  position: relative;
+}
+
+.menubar-navigation > li li {
+  display: block;
+}
+
+.menubar-navigation > li > [role="menuitem"] {
+  display: inline-block;
+  margin: 2px;
+  padding: 4px;
+  padding-bottom: 8px;
+  border: 0 solid #eee;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.menubar-navigation li a:focus {
+  text-decoration: underline;
+}
+
+.menubar-navigation li a {
+  color: rgba(255, 255, 255, 0.7); /* Default color */
+}
+
+.menubar-navigation li a.active {
+  color: rgba(255, 255, 255, 1); /* White color when active */
 }
