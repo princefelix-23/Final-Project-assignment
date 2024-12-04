@@ -86,20 +86,22 @@
             >
               Meet the Empower Community
             </button>
+            <!-- https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/ -->
             <div id="dialog_layer" class="dialogs">
               <div id="overlay" class="overlay hidden"></div>
               <!-- Dialog: Community Steering Committee -->
               <div
-                role="dialog"
+                role="alertdialog"
                 id="dialog1"
-                aria-labelledby="dialog1_label"
+                aria-labelledby="empower-community"
+                aria-describedby="empowercommunity-description"
                 aria-modal="true"
                 class="hidden"
               >
-                <h2 id="dialog1_label" class="dialog_label" tabindex="-1">
+                <h2 id="empower-community" class="dialog_label" tabindex="-1">
                   Empower Community
                 </h2>
-                <div class="dialog_content">
+                <div id="empowercommunity-description" class="dialog_content">
                   <p>
                     We get an aha! moments from product managers who try our
                     services for the first time. We offered many lab days,
@@ -161,6 +163,7 @@
               </ul>
 
               <a
+                target="_blank"
                 href="https://www.elevenways.be/en/services"
                 class="btn btn-link"
                 >Learn more
@@ -176,6 +179,8 @@
                 team’s understanding of inclusion.
               </p>
               <a
+              
+                target="_blank"
                 href="https://dictionary.cambridge.org/us/dictionary/english/testimonial"
                 class="btn btn-link"
                 >Learn more

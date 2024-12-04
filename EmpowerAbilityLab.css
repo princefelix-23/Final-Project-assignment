@@ -6,6 +6,19 @@
   display: none;
 }
 
+.btn {
+  text-decoration: underline;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.btn:focus,
+.btn:hover {
+  outline: 2px solid #0056b3;
+  text-decoration: underline;
+  color: #0056b3;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -20,6 +33,17 @@
 /* Show the overlay */
 .overlay.visible {
   display: block;
+}
+
+#modalOpenBtn {
+  cursor: pointer;
+}
+
+#modalOpenBtn:focus,
+#modalOpenBtn:hover {
+  background-color: #ffffff;
+  text-decoration: underline;
+  color: #5906ff;
 }
 
 #dialog1 {

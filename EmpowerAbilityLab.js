@@ -48,7 +48,7 @@ const main = {
         dialog.querySelector(".dialog_label").focus();
     },
     closeDialog: (button) => {
-        const dialog = button.closest('[role="dialog"]');
+        const dialog = button.closest('[role="alertdialog"]');
         const overlay = document.getElementById("overlay");
 
         dialog.classList.add("hidden");
