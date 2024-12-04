@@ -47,6 +47,15 @@ const main = {
         overlay.classList.add("visible");
 
         dialog.querySelector(".dialog_label").focus();
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                const dialog = document.querySelector('[role="alertdialog"]:not(.hidden)');
+                if (dialog) {
+                    main.closeDialog(dialog.querySelector('button'));
+                }
+            }
+        });
     },
     closeDialog: (button) => {
         const dialog = button.closest('[role="alertdialog"]');
