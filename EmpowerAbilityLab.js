@@ -111,11 +111,7 @@ const main = {
             main.validateInput("phone", "Please tell us your phone number!");
             main.validateInput("email", "Please tell us your email!");
 
-            // If no errors were found, submit the form
-            if ($("fieldset.errors").length === 0) {
-                form.submit(); // Only submit if all fields are valid
-                alert("Form submitted successfully!");
-            }
+
         });
     },
     validateInput: (input, message) => {
