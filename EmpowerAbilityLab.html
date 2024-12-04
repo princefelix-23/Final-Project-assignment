@@ -12,6 +12,7 @@
       content="Foster understanding and promote inclusive digital experiences for all"
     />
     <meta name="author" content="" />
+
     <!-- Bootstrap core CSS -->
     <link
       href="https://getbootstrap.com/docs/4.0/examples/jumbotron/jumbotron.css"
@@ -27,6 +28,7 @@
     <link rel="stylesheet" href="EmpowerAbilityLab.css" />
   </head>
   <body>
+    <a class="skip-main" href="#home">Skip to main content</a>
     <header role="banner">
       <nav
         aria-label="Empower Ability Labs"
@@ -34,7 +36,7 @@
       >
         <a class="navbar-brand" href="https://www.google.ca/">
           <img
-            src="images/empowerabilitylabslogo-contrast.png"
+            src="https://github.com/princefelix-23/Final-Project-assignment/blob/main/images/empowerabilitylabslogo.png?raw=true"
             alt="empower ability labs logo"
             property="logo"
           />
@@ -71,7 +73,9 @@
           <div class="container">
             <!-- rmeove class="h2" or make it <h2> -->
             <!-- <h1 class="h2">Welcome to Empower Ability Labs!</h1> -->
-            <h1>Welcome to Empower Ability Labs!</h1>
+            <h1 tabindex="-1" id="home-heading">
+              Welcome to Empower Ability Labs!
+            </h1>
             <p>
               Empower Ability Labs is a hub for learning and empathy-building.
               We are on a mission to foster understanding and promote inclusive
@@ -198,7 +202,9 @@
       <section id="services" aria-labelledby="services-heading" hidden>
         <div class="jumbotron">
           <div class="container">
-            <h1 id="schedule-heading">EmpowerAbilityLab Services</h1>
+            <h1 tabindex="-1" id="services-heading">
+              EmpowerAbilityLab Services
+            </h1>
 
             <div class="container">
               <div class="row justify-content-between">
@@ -211,7 +217,11 @@
                   </p>
                 </div>
                 <div class="col-2">
-                  <img id="icon" src="https://github.com/princefelix-23/Final-Project-assignment/blob/main/images/services.png?raw=true" alt="thumbs up emoji" />
+                  <img
+                    id="icon"
+                    src="https://github.com/princefelix-23/Final-Project-assignment/blob/main/images/services.png?raw=true"
+                    alt="thumbs up emoji"
+                  />
                 </div>
               </div>
             </div>
@@ -257,7 +267,7 @@
       <section id="schedule-a-call" aria-labelledby="schedule-heading" hidden>
         <div class="jumbotron">
           <div class="container">
-            <h1 id="schedule-heading">
+            <h1 tabindex="-1" id="schedule-heading">
               Schedule a Call With EmpowerAbilityLab
             </h1>
             <div class="container">
@@ -272,7 +282,11 @@
                   </p>
                 </div>
                 <div class="col-4">
-                  <img id="icon" src="https://github.com/princefelix-23/Final-Project-assignment/blob/main/images/scheduleacall.png?raw=true" alt="" />
+                  <img
+                    id="icon"
+                    src="https://github.com/princefelix-23/Final-Project-assignment/blob/main/images/scheduleacall.png?raw=true"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -286,7 +300,7 @@
               </div>
 
               <div class="control">
-                <label for="phone">Phone number (613-123-1234):</label>
+                <label for="phone" nam>Phone number (613-123-1234):</label>
                 <input
                   type="tel"
                   id="phone"
@@ -431,8 +445,8 @@
                     />
                   </svg>
                 </button>
-                <label id="switch-label"
-                  >Receive emails about updates and services</label
+                <span id="switch-label"
+                  >Receive emails about updates and services</span
                 >
               </div>
 
@@ -440,6 +454,7 @@
                 id="submit-schedule-call"
                 class="btn btn-light"
                 type="submit"
+                name="validate"
               >
                 Schedule a call
               </button>
@@ -451,6 +466,11 @@
     <footer class="container">
       <p>© Copyright Empower Ability Labs Inc 2023. All rights reserved.</p>
     </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
     <script src="EmpowerAbilityLab.js"></script>
   </body>
 </html>
