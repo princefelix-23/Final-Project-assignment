@@ -271,6 +271,8 @@
                     id="invite-speaker"
                     name="topic"
                     value="invite-speaker"
+                    aria-controls="event-description-section"
+                    aria-expanded="false"
                   />
                   <label for="invite-speaker"
                     >Invite a speaker with disabilities to your event</label
@@ -288,10 +290,11 @@
                 </div>
               </fieldset>
 
-              <label for="event-description"
-                >Please tell us about your event</label
-              >
-              <textarea id="event-description" required></textarea>
+              <div id="event-description-section"
+              class="hidden" aria-hidden="true">
+                <label for="event-description">Please tell us about your event</label>
+                <textarea id="event-description"></textarea>
+              </div>
 
               <div class="switch-container">
                 <!-- Reference: https://www.w3.org/WAI/ARIA/apg/patterns/switch/examples/switch-button/ -->

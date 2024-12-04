@@ -106,3 +106,23 @@ document.querySelector('#submit-schedule-call').addEventListener('click', (e) =>
     // Handle valid submission
     formFeedback.textContent = 'Form submitted successfully!';
 });
+
+const speakerToggle = document.querySelector('#invite-speaker');
+const speakerSection = document.querySelector('#event-description-section');
+
+// Event checkbox code
+speakerToggle.addEventListener('change', (e) =>
+{
+    if (speakerToggle.checked) {
+        console.log('Speaker section is visible');
+        // Show the section
+        speakerSection.classList.remove('hidden');
+        speakerSection.setAttribute('aria-hidden', 'false');
+        speakerToggle.setAttribute('aria-expanded', 'true');
+    } else {
+        // Hide the section
+        speakerSection.classList.add('hidden');
+        speakerSection.setAttribute('aria-hidden', 'true');
+        speakerToggle.setAttribute('aria-expanded', 'false');
+    }
+});
