@@ -110,7 +110,6 @@ const main = {
             main.validateInput("business-name", "Please enter your business name!");
             main.validateInput("phone", "Please tell us your phone number!");
             main.validateInput("email", "Please tell us your email!");
-            main.validateInput("topic", "Please choose a topic!");
 
             // If no errors were found, submit the form
             if ($("fieldset.errors").length === 0) {
@@ -136,7 +135,7 @@ const main = {
         if (!isValid) {
             // Create an error message if input is invalid
             if ($("fieldset.errors").length === 0) {
-                $("form").prepend('<fieldset aria-label="errors" class="errors"><legend>Errors</legend><ul></ul></fieldset>');
+                $("form").prepend('<fieldset aria-label="errors" class="errors"><legend>Emoty Fields</legend><ul></ul></fieldset>');
             }
 
             const $errorContainer = $("fieldset.errors ul");
