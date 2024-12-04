@@ -59,7 +59,25 @@ const main = {
 
     },
     handleHamburger: () => {
+        const navLinks = document.querySelectorAll('.menubar-navigation a'); // Select all the links in the menu
+        let currentIndex = 0; // Start with the first link
 
+        // Move focus to the current link
+        navLinks[currentIndex].focus();
+
+        // Listen for keydown events to navigate
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "ArrowDown" || event.key === "ArrowRight") {
+                // Move focus to the next link (right or down)
+                currentIndex = (currentIndex + 1) % navLinks.length; // Loop back to the start
+            } else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
+                // Move focus to the previous link (up or left)
+                currentIndex = (currentIndex - 1 + navLinks.length) % navLinks.length; // Loop to the last item
+            }
+
+            // Set focus to the updated link
+            navLinks[currentIndex].focus();
+        });
     }
 };
 
