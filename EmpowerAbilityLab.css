@@ -2,13 +2,18 @@
   max-height: 40px;
 }
 
+section {
+  padding-top: 100px;
+  margin-top: -100px;
+}
+
 .hidden {
   display: none;
 }
 
 .btn {
   text-decoration: underline;
-  color: #0000EE;
+  color: #0000ee;
   cursor: pointer;
 }
 
@@ -177,7 +182,7 @@ legend {
   border: 0 solid #eee;
   color: rgba(255, 255, 255, 0.7);
 }
-
+.menubar-navigation li a:hover,
 .menubar-navigation li a:focus {
   text-decoration: underline;
 }
@@ -188,4 +193,14 @@ legend {
 
 .menubar-navigation li a.active {
   color: rgba(255, 255, 255, 1); /* White color when active */
+}
+
+.dialog_form_actions button {
+  color: #ffffff;
+}
+
+@media (max-width: 470px) {
+  main {
+    padding-top: 10%;
+  }
 }
