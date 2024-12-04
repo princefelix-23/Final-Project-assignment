@@ -51,6 +51,20 @@ section {
   color: #5906ff;
 }
 
+#closeBtn {
+  text-decoration: none;
+  background-color: #19222a;
+}
+
+#closeBtn:focus,
+#closeBtn:hover {
+  text-decoration: underline;
+  outline: 2px solid #0056b3;
+  text-decoration: underline;
+  color: #ffffff;
+  background-color: #4f5860;
+}
+
 #dialog1 {
   position: absolute;
   background-color: rgb(255, 255, 255);

@@ -1,7 +1,7 @@
 const main = {
     init: () => {
         main.navigation();
-        main.handleHamburger();
+        main.handleMenu();
     },
     navigation: () => {
         const navLinks = document.querySelectorAll(".nav-link");
@@ -47,6 +47,15 @@ const main = {
         overlay.classList.add("visible");
 
         dialog.querySelector(".dialog_label").focus();
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                const dialog = document.querySelector('[role="alertdialog"]:not(.hidden)');
+                if (dialog) {
+                    main.closeDialog(dialog.querySelector('button'));
+                }
+            }
+        });
     },
     closeDialog: (button) => {
         const dialog = button.closest('[role="alertdialog"]');
@@ -58,26 +67,33 @@ const main = {
         document.getElementById("modalOpenBtn").focus();
 
     },
-    handleHamburger: () => {
-        const navLinks = document.querySelectorAll('.menubar-navigation a'); // Select all the links in the menu
-        let currentIndex = 0; // Start with the first link
+    currentIndex: 0,
+    handleMenu: () => {
+        const menuItems = document.querySelectorAll('.menubar-navigation a');
 
-        // Move focus to the current link
-        navLinks[currentIndex].focus();
-
-        // Listen for keydown events to navigate
-        document.addEventListener('keydown', function (event) {
-            if (event.key === "ArrowDown" || event.key === "ArrowRight") {
-                // Move focus to the next link (right or down)
-                currentIndex = (currentIndex + 1) % navLinks.length; // Loop back to the start
-            } else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
-                // Move focus to the previous link (up or left)
-                currentIndex = (currentIndex - 1 + navLinks.length) % navLinks.length; // Loop to the last item
+        // Function to handle keydown events for navigation
+        document.querySelector('.menubar-navigation').addEventListener('keydown', function (event) {
+            switch (event.key) {
+                case 'ArrowRight':
+                    // Move focus to the next item
+                    main.focusMenuItem(menuItems, (main.currentIndex + 1) % menuItems.length);
+                    break;
+                case 'ArrowLeft':
+                    // Move focus to the previous item
+                    main.focusMenuItem(menuItems, (main.currentIndex - 1 + menuItems.length) % menuItems.length);
+                    break;
+                default:
+                    break;
             }
-
-            // Set focus to the updated link
-            navLinks[currentIndex].focus();
         });
+
+
+    },
+    focusMenuItem: (menuItems, index) => {
+        if (index >= 0 && index < menuItems.length) {
+            menuItems[index].focus();
+            main.currentIndex = index;
+        }
     }
 };
 
