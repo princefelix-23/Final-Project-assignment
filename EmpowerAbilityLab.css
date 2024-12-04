@@ -63,6 +63,11 @@ label[for="event-description"] {
   width: 150px;
 }
 
+#submit-schedule-call:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
 .switch-container {
   display: flex;
   align-items: center;
