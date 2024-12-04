@@ -135,7 +135,7 @@ const main = {
         if (!isValid) {
             // Create an error message if input is invalid
             if ($("fieldset.errors").length === 0) {
-                $("form").prepend('<fieldset aria-label="errors" class="errors"><legend>Emoty Fields</legend><ul></ul></fieldset>');
+                $("form").prepend('<fieldset aria-label="errors" class="errors"><legend>Empty Fields</legend><ul></ul></fieldset>');
             }
 
             const $errorContainer = $("fieldset.errors ul");
