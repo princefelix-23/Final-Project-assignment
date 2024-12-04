@@ -90,19 +90,21 @@ function validateForm() {
 document.querySelector('#submit-schedule-call').addEventListener('click', (e) => {
     const form = e.target.closest('form');
     const formFeedback = document.querySelector('#form-feedback');
-    
+
     // Let the browser handle validation if the form is invalid
     if (!form.checkValidity()) {
-        formFeedback.textContent = '';
+        formFeedback.textContent = 'Please review the form and correct any errors before submitting.';
+        formFeedback.classList.add('error-message');
         return;
     }
-    
+
     // Only prevent default and handle submission if form is valid
     e.preventDefault();
-    
+
     // Clear previous content
     formFeedback.textContent = '';
-    
+    formFeedback.classList.remove('error-message');
+
     // Handle valid submission
     formFeedback.textContent = 'Form submitted successfully!';
 });
@@ -111,8 +113,7 @@ const speakerToggle = document.querySelector('#invite-speaker');
 const speakerSection = document.querySelector('#event-description-section');
 
 // Event checkbox code
-speakerToggle.addEventListener('change', (e) =>
-{
+speakerToggle.addEventListener('change', (e) => {
     if (speakerToggle.checked) {
         console.log('Speaker section is visible');
         // Show the section
