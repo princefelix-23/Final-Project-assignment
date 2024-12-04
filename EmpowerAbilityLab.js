@@ -60,3 +60,47 @@ const main = {
 };
 
 document.addEventListener("DOMContentLoaded", main.init);
+
+// Switch code
+const toggle = document.getElementById('email-updates-switch');
+
+toggle.addEventListener('click', function() {
+    const isChecked = this.getAttribute('aria-checked') === 'true';
+    this.setAttribute('aria-checked', !isChecked);
+
+    console.log('Email updates preference:', !isChecked);
+});
+
+// Add keyboard support
+toggle.addEventListener('keydown', function(e) {
+    if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        this.click();
+    }
+});
+
+// Form checking code
+function validateForm()
+{
+    return true;
+}
+
+// Submit "schedule a call" form
+document.querySelector('#submit-schedule-call').addEventListener('click', (e) =>
+    {
+        e.preventDefault();
+        const isValid = validateForm();
+        const formFeedback = document.querySelector('#form-feedback');
+
+        // Clear previous content
+        formFeedback.textContent = '';
+
+        if (isValid) {
+            // Submit the form
+            formFeedback.textContent = 'Form submitted successfully!';
+        } else {
+            // Show an error message
+            formFeedback.textContent = 'Please fill out all required fields.';
+        }
+    }
+);
