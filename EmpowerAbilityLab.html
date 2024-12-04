@@ -199,11 +199,11 @@
             <h1 id="schedule-heading">
               Schedule a Call With EmpowerAbilityLab             
             </h1>
+            <!--Page 3-->
             <p>At Empower Ability Labs, we are dedicated to cultivating empathy and driving positive change through immersive experiences.</p>
             <p>Fill out the form below and we'll get back to you as soon as we can to schedule a call with our sales team!</p>
-            <form id="contact-form" action="#" method="post" aria-live="polite">
-            
-                   
+            <form id="contact-form" action="#" method="post" aria-live="assertive">              
+                             
                   <div class="control">
                       <label for="business-name">Business Name:</label>
                       <input type="text" id="business-name" name="business-name">
@@ -217,10 +217,9 @@
   
                   <div class="control">
                       <label for="email">Email (required):</label>
-                      <input type="email" id="email" name="email" required>
+                      <input type="email" id="email" name="email" aria-required="true" required>
                   </div>
-           
-  
+             
               <fieldset>
                   <legend>What would you like to talk about</legend>  
                   <div>
@@ -254,8 +253,8 @@
                   <span class="visually-hidden">This is a switch interactive element. Choose an image switch and use it.</span>
               </div>
   
-              <button type="submit">Schedule a call</button>
-  
+              <button type="submit" id="btnSubmit">Schedule a call</button>
+
           </form>
 
           </div>
