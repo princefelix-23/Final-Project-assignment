@@ -62,6 +62,7 @@ const main = {
 document.addEventListener("DOMContentLoaded", main.init);
 
 // Switch code
+// Reference: https://www.w3.org/WAI/ARIA/apg/patterns/switch/examples/switch-button/
 const toggle = document.getElementById('email-updates-switch');
 
 toggle.addEventListener('click', function() {
