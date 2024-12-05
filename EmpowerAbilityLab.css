@@ -2,9 +2,8 @@
   max-height: 40px;
 }
 .navbar.navbar-dark.bg-dark {
-    background-color: #657c95 !important;
-  }
-
+  background-color: #657c95 !important;
+}
 
 .nav-main {
   background-color: #ae9fa5;
@@ -16,6 +15,7 @@ a.skip-main {
   top: 0;
   z-index: -99999;
   left: -999px;
+  color: #000000;
 }
 a.skip-main:active,
 a.skip-main:focus {
