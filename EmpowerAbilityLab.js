@@ -37,6 +37,26 @@ const main = {
 
                 // Move focus to the target section heading
                 targetSection.querySelector("h1").focus();
+
+                document.title = link.textContent + " | Empower Ability Labs";
+
+
+                history.pushState({ section: targetId }, '', '#' + targetId);
+
+                window.addEventListener('popstate', function (event) {
+                    if (event.state && event.state.section) {
+                        const targetSection = document.getElementById(event.state.section);
+
+                        // Hide all sections
+                        document.querySelectorAll('section').forEach(section => {
+                            section.hidden = true;
+                        });
+
+                        // Show the section from history state
+                        targetSection.hidden = false;
+                    }
+                });
+
             });
         });
     },
@@ -131,11 +151,11 @@ const main = {
         if (!isValid) {
             // Create an error message if input is invalid
             if ($("fieldset.errors").length === 0) {
-                $("form").prepend('<fieldset aria-label="errors" class="errors"><legend>Empty Fields</legend><ul></ul></fieldset>');
+                $("form").prepend('<fieldset aria-label="errors" class="errors" aria-live="polite"><legend>Empty Fields</legend><ul></ul></fieldset>');
             }
 
             const $errorContainer = $("fieldset.errors ul");
-            const $error = $('<a href="#">' + message + "</a>");
+            const $error = $('<a href="#" >' + message + "</a>");
             $error.click(function (e) {
                 // Focus the first invalid input
                 $input.first().focus();
@@ -144,7 +164,7 @@ const main = {
 
             $errorContainer.append("<li>").find("li:last").append($error);
             $input.attr("aria-describedby", input + "_description"); // Accessible error description
-
+            $("fieldset.errors")[0].focus();
             return false; // Input is invalid
         } else {
             // If input is valid, remove any previous error message
