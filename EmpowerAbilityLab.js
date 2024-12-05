@@ -25,7 +25,7 @@ const main = {
                 });
 
                 // Show the target section
-                const targetId = link.getAttribute("href").substring(1); // Remove the `#`
+                const targetId = link.getAttribute("href").substring(1);
                 const targetSection = document.getElementById(targetId);
 
                 if (!targetSection) {
@@ -41,21 +41,14 @@ const main = {
                 document.title = link.textContent + " | Empower Ability Labs";
 
 
-                history.pushState({ section: targetId }, '', '#' + targetId);
+                var newUrl = 'http://127.0.0.1:5500/EmpowerAbilityLab.html';
+                history.pushState({
+                    url:
+                        newUrl, title: document.title
+                },
+                    newTitle, newUrl);
 
-                window.addEventListener('popstate', function (event) {
-                    if (event.state && event.state.section) {
-                        const targetSection = document.getElementById(event.state.section);
 
-                        // Hide all sections
-                        document.querySelectorAll('section').forEach(section => {
-                            section.hidden = true;
-                        });
-
-                        // Show the section from history state
-                        targetSection.hidden = false;
-                    }
-                });
 
             });
         });
