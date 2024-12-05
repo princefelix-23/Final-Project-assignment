@@ -1,6 +1,10 @@
 .navbar-brand img {
   max-height: 40px;
 }
+.navbar.navbar-dark.bg-dark {
+    background-color: #657c95 !important;
+  }
+
 
 /* https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ */
 a.skip-main {
