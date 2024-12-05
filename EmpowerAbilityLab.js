@@ -261,3 +261,8 @@ document.querySelectorAll('fieldset input[type=checkbox]').forEach((checkbox) =>
         }
     });
 });
+
+function changeNavbarColor() {
+  const navbar = document.querySelector('nav');
+  navbar.style.backgroundColor = '#5e7995'; // Any desired color
+}
